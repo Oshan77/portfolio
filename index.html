@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Oshan Nalawade | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Font Awesome -->
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <div class="profile">
+        <img src="profile.jpeg" alt="Oshan Nalawade">
+        <h1>Oshan Nalawade</h1>
+        <p>Web Developer | Android | Data Analyst</p>
+        <div class="socials">
+          <a href="https://github.com/devil12344" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/oshan-nalawade-ba0aa4204?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="resume (2).pdf" download class="resume-btn"><i class="fas fa-download"></i> Resume</a>
+          <button id="toggle-theme">🌙</button>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        I'm a passionate developer focused on full-stack apps, Android projects, and machine learning. I enjoy building clean, interactive, and user-friendly digital experiences.
+      </p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="filter-btns">
+        <button data-filter="all">All</button>
+        <button data-filter="web">Web</button>
+        <button data-filter="ml">ML</button>
+        <button data-filter="uiux">UI/UX</button>
+      </div>
+      <div id="project-container" class="project-grid"></div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <form id="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Oshan Nalawade. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
