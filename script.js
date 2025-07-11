@@ -51,10 +51,32 @@ document.getElementById("toggle-theme").addEventListener("click", () => {
   document.body.classList.toggle("dark");
 });
 
-document.getElementById("contact-form").addEventListener("submit", e => {
+document.getElementById("contact-form").addEventListener("submit", async function(e) {
   e.preventDefault();
-  alert("Message sent! (To make it real, connect to Google Forms or Netlify)");
+
+  const form = e.target;
+  const data = {
+    name: form.name.value,
+    email: form.email.value,
+    message: form.message.value
+  };
+
+  try {
+    const res = await fetch("https://portfolio-vi9c.onrender.com/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
+
+    const result = await res.json();
+    document.getElementById("form-message").textContent = result.message;
+    form.reset();
+  } catch (err) {
+    document.getElementById("form-message").textContent = "Something went wrong!";
+    console.error(err);
+  }
 });
+
 
 window.onload = () => {
   loadProjects();
