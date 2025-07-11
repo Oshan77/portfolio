@@ -7,11 +7,11 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb://127.0.0.1:27017/contactDB', {
+mongoose.connect('mongodb+srv://admin:Oshan@009@cluster0.mongodb.net/contactDB?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(() => console.log("MongoDB connected"))
-  .catch(err => console.log(err));
+  .catch(err => console.error("MongoDB connection error:", err));
 
 const Contact = mongoose.model('Contact', {
   name: String,
